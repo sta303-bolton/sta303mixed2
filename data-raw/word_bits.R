@@ -8,7 +8,7 @@ simpler <- yaml::read_yaml("https://raw.githubusercontent.com/greghaskins/gibber
 initials <- simpler$initials[[1]] %>%
   as_tibble()
 
-usethis::use_data(initials, overwrite = TRUE, internal = TRUE)
+usethis::use_data(initials, overwrite = TRUE)
 
 finals <- bits$finals %>%
   unlist() %>%
@@ -18,7 +18,7 @@ finals <- bits$finals %>%
   filter(str_length(value) <= 2) %>%
   slice(1:27)
 
-usethis::use_data(finals, overwrite = TRUE, internal = TRUE)
+usethis::use_data(finals, overwrite = TRUE)
 
 vowels <- bits$vowels %>%
   unlist() %>%
@@ -27,4 +27,4 @@ vowels <- bits$vowels %>%
   filter(str_length(value) <= 2) %>%
   filter(!(value %in% c("ii", "uu")))
 
-usethis::use_data(vowels, overwrite = TRUE, internal = TRUE)
+usethis::use_data(vowels, overwrite = TRUE)
