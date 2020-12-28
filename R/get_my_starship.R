@@ -12,6 +12,9 @@ get_my_starship <- function(student_id){
   if(!(str_length(student_id) %in% c(8, 9, 10))) stop("Are you sure that is your student id? It should be 8 to 10 digits (10 is most common).")
 
      get_shipname(student_id)
+
+     data("positions", envir=environment())
+
      set.seed(student_id)
 
      aug_pos <- positions %>%

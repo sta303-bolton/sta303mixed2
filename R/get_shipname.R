@@ -12,7 +12,11 @@ get_shipname <- function(student_id){
   if(!is.numeric(student_id)) stop("student_id must be numeric, there should be no quote marks or letters. You student number is not your UTORid.")
   if(!(str_length(student_id) %in% c(8, 9, 10))) stop("Are you sure that is your student id? It should be 8 to 10 digits (10 is most common).")
 
-  # load data needed
+  # load data needed?
+  data("initials", envir=environment())
+  data("vowels", envir=environment())
+  data("finals", envir=environment())
+
   set.seed(student_id)
   rand <- runif(1, 0, 1)
   ship_name <- if_else(rand > 0.5,
