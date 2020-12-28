@@ -7,9 +7,10 @@ Maintainer: Liza Bolton, <liza.bolton@utoronto.ca>
 Description: Creates a dataset about a unqiue fictional spaceship based on a student's 8-10 number student ID and their name. They will be the Chief Science Officer.
 License: CC BY-NC
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 Imports: tidyverse,
           randomNames
 Depends: R (>= 3.1.0)
 URL: https://github.com/elb0/myStarship
 BugReports: https://github.com/elb0/myStarship/issues
+RoxygenNote: 7.1.0
