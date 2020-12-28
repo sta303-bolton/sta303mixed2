@@ -8,6 +8,6 @@ Description: Creates a dataset about a unqiue fictional spaceship based on a stu
 License: CC BY-NC
 Encoding: UTF-8
 LazyData: true
-Imports: tidyverse
-Depends: R (>= 3.1.0),
+Imports: tidyverse,
           randomNames
+Depends: R (>= 3.1.0)
