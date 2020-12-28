@@ -13,21 +13,17 @@ get_shipname <- function(student_id){
   if(!(str_length(student_id) %in% c(8, 9, 10))) stop("Are you sure that is your student id? It should be 8 to 10 digits (10 is most common).")
 
   # load data needed
-  data("vowels", envir=environment())
-  data("finals", envir=environment())
-  data("initials", envir=environment())
-
   set.seed(student_id)
   rand <- runif(1, 0, 1)
   ship_name <- if_else(rand > 0.5,
-          str_c("SS ", str_to_title(str_c(sample(initials$value, 1),
-                                          sample(vowels$value, 1),
-                                          sample(finals$value, 1)))),
-          str_c("SS ", str_to_title(str_c(sample(initials$value, 1),
-                                          sample(vowels$value, 1),
-                                          sample(initials$value, 1),
-                                          sample(vowels$value, 1),
-                                          sample(finals$value, 1)))))
+          str_c("SS ", str_to_title(str_c(sample(myStarship::initials$value, 1),
+                                          sample(myStarship::vowels$value, 1),
+                                          sample(myStarship::finals$value, 1)))),
+          str_c("SS ", str_to_title(str_c(sample(myStarship::initials$value, 1),
+                                          sample(myStarship::vowels$value, 1),
+                                          sample(myStarship::initials$value, 1),
+                                          sample(myStarship::vowels$value, 1),
+                                          sample(myStarship::finals$value, 1)))))
   assign("ship_name", ship_name, .GlobalEnv)
 }
 

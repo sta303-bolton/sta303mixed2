@@ -11,11 +11,10 @@ get_my_starship <- function(student_id){
   if(!is.numeric(student_id)) stop("student_id must be numeric, there should be no quote marks or letters. You student number is not your UTORid.")
   if(!(str_length(student_id) %in% c(8, 9, 10))) stop("Are you sure that is your student id? It should be 8 to 10 digits (10 is most common).")
 
-     data("positions", envir=environment())
      get_shipname(student_id)
      set.seed(student_id)
 
-     aug_pos <- positions %>%
+     aug_pos <- myStarship::positions %>%
        mutate(gender = sample(c("Masculine", "Feminine", "Non-binary"), prob = c(0.52, 0.44, 0.04), nrow(.), replace = TRUE)) %>%
        mutate(gen_code = case_when(
          gender == "Masculine" ~ 0,
