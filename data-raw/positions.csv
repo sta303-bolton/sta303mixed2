@@ -1,0 +1,44 @@
+﻿rank,position,division,sub_division,N
+Captain,Captain,Command,Command,1
+Commander,First Officer,Command,Command,1
+Commander,Chief Engineer,Operations,Engineering,1
+Commander,Chief Medical Officer,Sciences,Medical,1
+Lieutenant,Helmsman,Command,Command,4
+Lieutenant Commander,Communications Officer,Command,Command,1
+Lieutenant,Navigator,Command,Command,4
+Lieutenant Commander,Security Chief,Command,Command,1
+Lieutenant,Records Officer,Command,Command,3
+Chief Petty Officer,Enigneering Technician,Operations,Engineering,15
+Ensign,Engineer,Operations,Engineering,20
+Lieutenant,Security Officer,Operations,Security,17
+Ensign,Security Officer,Operations,Security,22
+Crewman,Security Officer,Operations,Security,15
+Lieutenant,Medical technician,Sciences,Medical,8
+Lieutenant Commander,Astrobiologist,Sciences,Research,10
+Lieutenant,Astrophysicist,Sciences,Research,3
+Lieutenant,Philosopher,Sciences,Research,2
+Lieutenant,Sociologist,Sciences,Research,2
+Lieutenant Commander,Physician,Sciences,Medical,4
+Yeoman,Yeoman,Sciences ,Research,13
+Yeoman,Yeoman,Operations,Services,16
+Crewman,Geological Technician,Sciences,Research,2
+Lieutenant Commander,Psychiatrist,Sciences,Medical,3
+Lieutenant,Nurse,Sciences,Medical,10
+Lieutenant Commander,Statistician,Sciences,Research,1
+Ensign,Meterologist,Sciences,Research,1
+Lieutenant,Cryptozoologist,Sciences,Research,12
+Lieutenant,Language Specialist,Sciences,Research,2
+Lieutenant Commander,Tactical officer,Operations,Security,2
+Ensign,Personnel Officer,Operations,Services,2
+Lieutenant,Mess Officer,Operations,Services,1
+Lieutenant,Historian,Sciences,Research,1
+Crewman,Galley Chef,Operations,Services,4
+Crewman,Airlock Technician,Operations,Engineering,1
+Ensign,Transporter Chief,Operations,Engineering,1
+Yeoman,Massage Therapist,Operations,Services,4
+Ensign,Technician,Operations,Engineering,10
+Ensign,Technician,Operations,Services,10
+Lieutenant,Specialist,Operations,Engineering,7
+Ensign,Specialist,Sciences,Research,7
+Yeoman,Estheticians,Operations,Services,3
+Ensign,Replicator Technician,Operations,Engineering,3
