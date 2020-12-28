@@ -23,7 +23,7 @@ get_my_starship <- function(student_id){
        )) %>%
        mutate(eth_code = round(runif(nrow(.), 0.5, 6.49), 0)) %>%
        rowwise() %>%
-       mutate(name = randomNames(1, gen_code, ethnicity = eth_code,
+       mutate(name = randomNames::randomNames(1, gen_code, ethnicity = eth_code,
                                  name.order = "first.last", name.sep = " ")) %>%
        ungroup() %>%
        mutate(duty_shift = sample(c("Alpha", "Beta", "Delta", "Gamma"), nrow(.),
