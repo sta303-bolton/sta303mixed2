@@ -14,7 +14,7 @@ get_my_starship <- function(student_id){
      get_shipname(student_id)
      set.seed(student_id)
 
-     aug_pos <- myStarship::positions %>%
+     aug_pos <- positions %>%
        mutate(gender = sample(c("Masculine", "Feminine", "Non-binary"), prob = c(0.52, 0.44, 0.04), nrow(.), replace = TRUE)) %>%
        mutate(gen_code = case_when(
          gender == "Masculine" ~ 0,

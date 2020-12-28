@@ -16,14 +16,14 @@ get_shipname <- function(student_id){
   set.seed(student_id)
   rand <- runif(1, 0, 1)
   ship_name <- if_else(rand > 0.5,
-          str_c("SS ", str_to_title(str_c(sample(myStarship::initials$value, 1),
-                                          sample(myStarship::vowels$value, 1),
-                                          sample(myStarship::finals$value, 1)))),
-          str_c("SS ", str_to_title(str_c(sample(myStarship::initials$value, 1),
-                                          sample(myStarship::vowels$value, 1),
-                                          sample(myStarship::initials$value, 1),
-                                          sample(myStarship::vowels$value, 1),
-                                          sample(myStarship::finals$value, 1)))))
+          str_c("SS ", str_to_title(str_c(sample(initials$value, 1),
+                                          sample(vowels$value, 1),
+                                          sample(finals$value, 1)))),
+          str_c("SS ", str_to_title(str_c(sample(initials$value, 1),
+                                          sample(vowels$value, 1),
+                                          sample(initials$value, 1),
+                                          sample(vowels$value, 1),
+                                          sample(finals$value, 1)))))
   assign("ship_name", ship_name, .GlobalEnv)
 }
 
