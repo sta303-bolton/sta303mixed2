@@ -16,7 +16,8 @@ finals <- bits$finals %>%
   filter(!(value %in% c("TRUE", "FALSE"))) %>%
   filter(!str_detect(value, "z|x|ct")) %>%
   filter(str_length(value) <= 2) %>%
-  slice(1:27)
+  slice(1:27) %>%
+  bind_rows(data.frame(value = "tz"))
 
 usethis::use_data(finals, overwrite = TRUE)
 
@@ -25,6 +26,6 @@ vowels <- bits$vowels %>%
   as_tibble() %>%
   filter(!(value %in% c("TRUE", "FALSE"))) %>%
   filter(str_length(value) <= 2) %>%
-  filter(!(value %in% c("ii", "uu")))
+  filter(!(value %in% c("aa", "ao", "ii", "uu", "iu", "io", "uo", "ua", "ie", "ia", "ei")))
 
 usethis::use_data(vowels, overwrite = TRUE)

@@ -7,9 +7,10 @@
 #'
 #' @examples get_my_starship(1002345678)
 get_my_starship <- function(student_id){
+  require(tidyverse)
   # errors related to student_id
   if(!is.numeric(student_id)) stop("student_id must be numeric, there should be no quote marks or letters. You student number is not your UTORid.")
-  if(!(str_length(student_id) %in% c(8, 9, 10))) stop("Are you sure that is your student id? It should be 8 to 10 digits (10 is most common).")
+  if(!(nchar(student_id) %in% c(8, 9, 10))) stop("Are you sure that is your student id? It should be 8 to 10 digits (10 is most common).")
 
      get_shipname(student_id)
 
@@ -31,11 +32,11 @@ get_my_starship <- function(student_id){
        ungroup() %>%
        mutate(duty_shift = sample(c("Alpha", "Beta", "Delta", "Gamma"), nrow(.),
                                   replace = TRUE, prob = c(0.30, 0.30, 0.25, 0.15))) %>%
-       mutate(duty_shift = if_else(N == 1, "Alpha", duty_shift)) %>%
+       mutate(duty_shift = dplyr::if_else(N == 1, "Alpha", duty_shift)) %>%
        group_by(duty_shift, sub_division) %>%
        mutate(shift_team_id = cur_group_id()) %>%
        group_by(duty_shift) %>%
-       mutate(shift_team = str_c("Team ", dense_rank(shift_team_id))) %>%
+       mutate(shift_team = paste0("Team ", dense_rank(shift_team_id))) %>%
        select(-N, -gen_code, -eth_code) %>%
        ungroup() %>%
        mutate(starfleet_gpa = round(rnorm(nrow(.), 7.6, 1), 2)) %>%
