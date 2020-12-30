@@ -24,7 +24,7 @@ devtools::install_github("elb0/myStarship")
 This package assumes students have a numeric ID that is 8, 9 or 10
 digits long, no letters or special characters.
 
-`get_my_starship()` creates two objects in the environment.
+`get_my_starship()` creates two objects in the global environment.
 
 1)  `ship_name` is a character vector with the ship’s name. It has the
     form “SS \_\_\_\_\_” where the blank is a randomly generated
@@ -90,26 +90,34 @@ Your goal is to better understand productivity aboard your ship.
 
 # Outstanding questions/ideas
 
-  - How to autograde assessments is still something I am working on, but
-    very motivated to solve because I’d like to do this with my 600
+  - How to auto-grade assessments is still something I am working on,
+    but very motivated to solve because I’d like to do this with my 600
     third years.
       - I haven’t done this yet, but I think providing students with a
         personalized mark scheme should be pretty easy: at simplest,
         provide an .Rmd template that students can add their student ID
         to and knit, at most complicated, use a mail merge workflow.
-  - I’m still extremely new to making packages so there probably soooo
-    many ways to make this more light weight and not rely so heavily on
-    the tidyverse…but this works well for my purposes.
-  - Originally I’d thought about having the student provide their name
+  - I’m still extremely new to making packages so there are probably
+    soooo many ways to make this more light weight and not rely so
+    heavily on the tidyverse…but this works well for my purposes.
+  - Originally, I’d thought about having the student provide their name
     as an input to the function and having them represented in the data,
-    but then I added gender, and I also didn’t want them to be miffed if
-    they were randomly assigned a bad score for any of the numeric
-    variables.
+    but then I also added gender, and I also didn’t want them to be
+    miffed if they were randomly assigned a bad score for any of the
+    numeric variables.
   - I think there is still an eeny-weeny chance that a student will end
     up being the Science Officer on the SS \[swear word\], so I will be
-    warning studnets that the names are auto-generated…
+    warning students that the names are auto-generated…
 
 # Credits
+
+This idea was inspired from talking to [Nathalie
+Moon](https://www.statistics.utoronto.ca/people/directories/all-faculty/nathalie-moon)
+about a University of Toronto Faculty of Arts and Sciences, Teaching and
+Learning Community of Practice talk she attended by [Prof. Michael
+Reid](https://www.astro.utoronto.ca/people/faculty/name/michael-reid/),
+Adiv Paradise, Colleen Gilhuly and Emily Deibert over at the U of T
+David A. Dunlap Department of Astronomy & Astrophysics.
 
 The ‘initials’, ‘finals’ and ‘vowels’ components used to make starship
 names are pulled from the gibberish database:
