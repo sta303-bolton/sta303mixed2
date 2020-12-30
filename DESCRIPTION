@@ -10,7 +10,7 @@ Encoding: UTF-8
 LazyData: false
 Imports: tidyverse,
           randomNames
-Depends: R (>= 3.1.0)
+Depends: 
 URL: https://github.com/elb0/myStarship
 BugReports: https://github.com/elb0/myStarship/issues
 RoxygenNote: 7.1.0
