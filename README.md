@@ -42,7 +42,7 @@ library(tidyverse)
 get_my_starship(1000000098)
 
 ship_name
-#> [1] "SS Pleeplull"
+#> [1] "SS Pleaplutz"
 
 glimpse(personnel_data)
 #> Rows: 3,012
@@ -69,7 +69,7 @@ fans less ‘casual’ than me.
 ## Draft preamble for students
 
 You are the Chief Science Officer of the SS \_\_\_\_ (e.g. SS
-Pleeplull). You have data about the productivity of the crew over a 12
+Pleaplutz). You have data about the productivity of the crew over a 12
 week period after a shore leave (a holiday break for the crew). For each
 member of the crew you also have data on their `rank` within Starfleet,
 their role on the ship (`position`), which of the three main divisions
