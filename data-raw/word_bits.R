@@ -1,5 +1,5 @@
-## The initials, final and vowels are pulled
-## the gibberish database from https://github.com/greghaskins/gibberish
+## The initials, final and vowels are pulled from
+## this 'gibberish' repo https://github.com/greghaskins/gibberish
 
 bits <- yaml::read_yaml("https://raw.githubusercontent.com/greghaskins/gibberish/master/gibberish/database/raw_components.yaml")
 
