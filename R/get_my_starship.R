@@ -60,10 +60,10 @@ get_my_starship <- function(student_id){
        mutate(productivity = (productivity - min(productivity))/10+10) %>%
        select(-shift_team_id, -person_intercept, -person_slope) %>%
        group_by(name, position) %>%
-       mutate(crew_id = 42000+group_indices()) %>%
+       mutate(crew_id = 42000+cur_group_id()) %>%
        ungroup() %>%
        relocate(crew_id)
 
-     assign("personnel_data", personnel_data, .GlobalEnv)
+     assign("crew_data", personnel_data, .GlobalEnv)
 
 }
