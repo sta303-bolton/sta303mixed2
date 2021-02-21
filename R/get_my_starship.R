@@ -58,7 +58,11 @@ get_my_starship <- function(student_id){
               10*perseverance_score + 20*starfleet_gpa + -5*shift_team_id + rnorm(1, 0, 10)) %>%
        ungroup() %>%
        mutate(productivity = (productivity - min(productivity))/10+10) %>%
-       select(-shift_team_id, -person_intercept, -person_slope)
+       select(-shift_team_id, -person_intercept, -person_slope) %>%
+       group_by(name, position) %>%
+       mutate(crew_id = 42000+group_indices()) %>%
+       ungroup() %>%
+       relocate(crew_id)
 
      assign("personnel_data", personnel_data, .GlobalEnv)
 
