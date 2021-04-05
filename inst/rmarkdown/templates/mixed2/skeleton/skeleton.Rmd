@@ -32,7 +32,7 @@ Spotify is a streaming music service. It provides an API for accessing its data 
   spotifyr: R Wrapper for the 'Spotify' Web API. R package version 2.1.1.
   http://github.com/charlie86/spotifyr] is an R package that helps facilitate this. 
   
-Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks was collected through from the Spotify API. You will have a sample of this data to work with.
+Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks was collected through from the Spotify API. You will have a sample of this data to work with. Sampling occured at the artist level. All tracks retrieved for selected artists were included.
 
 ## Data dictionary
 
@@ -180,7 +180,7 @@ _Note: You do not have to do any further model tweaking other than the instructi
 
 _Study question: What is the message telling you?_
 
-2. Find out how many correct predictions each of these models make when applied to the `testing_data`.
+2. Find out how many correct predictions each of these models make when applied to the `testing_data`. The testing data is for 100 tracks by artists not in your `training data`.
 
 ```
 # This code will calculate it for your first model. 
