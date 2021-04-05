@@ -22,8 +22,8 @@ header-includes:
 | Submission link                     | PDF & RMD: https://q.utoronto.ca/courses/204826/assignments/506350                                                                                                                                                                                                        |
 | Accommodations and extension policy | If you miss a type 1 assessment due to illness or a serious personal emergency, please complete [**this form**](https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEOKHUU3SzAJJhmOKjJhDWEpUQU1aRjI2SFpSSExZUVhVWEFYVU83VVg3Qy4u&wdLOR=c5814094D-026D-0544-AA8C-7C06129D1526) within ONE week of the due date of the assignment (i.e. the end of the timed assessment window). |
 |                                     |                                                                                                                                                                                                            |
-Mixed assessment 1 has two components:
-  - Untimed guided analysis (this)
+Mixed assessment 1 has two components:  
+  - Untimed guided analysis (this)  
   - Timed assessment (50 minutes; 24-hour assessment window is 4:30 p.m. ET Tuesday, Apr 07 to 4:30 p.m. ET Wednesday, Apr 07)
  
  
@@ -56,7 +56,8 @@ Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks 
 |liveness                 |double    | Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live. |
 |valence                  |double    | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). |
 |tempo                    |double    | The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. |
-
+|key_name     |character       |Key |
+|mode_name    |character       |Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. |
 
 # Instructions
 1. Update the `yaml` at the top of this document to have your name and your student ID. There are TWO places you need to do this for each one, probably on lines 4 and 12. I.e., replace the square brackets and everything inside them with the appropriate details. Your student ID is all numbers (usually 10, sometimes 8 or 9), it is NOT your UTORid.  
@@ -69,7 +70,7 @@ Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks 
 ## Part 1: Data manipulation
 1. Load your data by putting your ID in `get_my_songs()`.
 
-```{r, load-data}
+```{r, load-data, message=FALSE}
 library(sta303mixed2)
 get_my_songs(100123456789)
 ```
@@ -80,7 +81,7 @@ get_my_songs(100123456789)
 
 ```
 
-## Part 2: Tables and calculat
+## Part 2: Tables and calculations
 
 1. Using the `training_data`, create a table of `genre` by `mode_name`. I.e., have `genre` on the rows and `mode_name` on the columns.
 
