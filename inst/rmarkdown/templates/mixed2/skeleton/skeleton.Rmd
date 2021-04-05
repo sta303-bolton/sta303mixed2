@@ -32,13 +32,13 @@ Spotify is a streaming music service. It provides an API for accessing its data 
   spotifyr: R Wrapper for the 'Spotify' Web API. R package version 2.1.1.
   http://github.com/charlie86/spotifyr] is an R package that helps facilitate this. 
   
-Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks was collected through from the Spotify API. You will have a sample of this data to work with. Sampling occured at the artist level. All tracks retrieved for selected artists were included.
+Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks was collected through from the Spotify API. You will have a sample of this data to work with. Sampling occurred at the artist level. All tracks retrieved for selected artists were included.
 
 ## Data dictionary
 
 |variable                 |class     |description |
 |:---|:---|:-----------|
-|id | numeric | Unique ID (arbirtrary) |
+|id | numeric | Unique ID (arbitrary) |
 |genre | | Whether the song is jazz or k-pop |
 |artist_name             |character | Song artist|
 |artist_popularity       |double | Popularity score (0-100) based on track play and recency. Higher is better |
@@ -110,7 +110,7 @@ get_my_songs(1001234567)
 
 ```
 
-3. Using the `training_data`, calcule the probability that a song chosen at random from your sample is a Jazz song in a major key.
+3. Using the `training_data`, calculate the probability that a song chosen at random from your sample is a Jazz song in a major key.
 
 ```{r majorjazz}
 
