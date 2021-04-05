@@ -70,8 +70,13 @@ Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks 
 ## Part 1: Data manipulation
 1. Load your data by putting your ID in `get_my_songs()`.
 
-```{r, load-data, message=FALSE}
+```{r, libraries, message=FALSE}
 library(sta303mixed2)
+library(lme4)
+library(mgcv)
+```
+
+```{r, loaddata}
 get_my_songs(100123456789)
 ```
 
@@ -109,9 +114,9 @@ get_my_songs(100123456789)
 
 ## Part 3: Models
 
-Note: You do not have to any further model tweaking other than the instructions provided.
+_Note: You do not have to do any further model tweaking other than the instructions provided._
 
-1. Using the `training_data`, fit an appropriate GLM to predict whether or not a song is K-pop. Use `artist_popularity`, `danceability`, `valence` as your predictors.
+1. Using the `training_data`, fit an appropriate GLM to predict whether or not a song is 'K-pop'. Use `artist_popularity`, `danceability`, `valence` as your predictors.
 
 * Name your model: `model_1`.
 * Run `summary()` on your model.
@@ -124,11 +129,9 @@ Note: You do not have to any further model tweaking other than the instructions 
 
 * Name your model: `model_2`.
 * __Important:__ Add the following argument to your model: `nAGQ=0`.
-* It is okay if you get a message about it failing to converge. You can ignore that for our purposes.
 * Run `summary()` on your model.
 
 ```{r, mixed, cache=TRUE}
-library(lme4)
 
 
 # summary(model_2)
@@ -143,7 +146,7 @@ library(lme4)
 * Run `summary()` on your model.
 
 ```{r, gam, cache=TRUE}
-library(mgcv)
+
 
 # summary(model_3)
 ```
@@ -166,7 +169,7 @@ sum(diag(tab_1))/100
 ```
 
 ```{r}
-# Add your code for all three models below, based on the example code above
+# Add your code for all three models below, based on the example code above.
 
 ```
 
