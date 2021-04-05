@@ -122,7 +122,7 @@ get_my_songs(1001234567)
 
 ```
 
-5. Using the `training_data`, calculate the odds ratio for a song being Jazz, given that it is likely live given vs not.
+5. Using the `training_data`, calculate the odds ratio for a song being Jazz, given that it is likely live vs not.
 
 ```{r livekvj}
 
