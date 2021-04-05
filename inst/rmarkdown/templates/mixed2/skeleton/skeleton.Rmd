@@ -22,9 +22,10 @@ header-includes:
 | Submission link                     | PDF & RMD: https://q.utoronto.ca/courses/204826/assignments/506350                                                                                                                                                                                                        |
 | Accommodations and extension policy | If you miss a type 1 assessment due to illness or a serious personal emergency, please complete [**this form**](https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEOKHUU3SzAJJhmOKjJhDWEpUQU1aRjI2SFpSSExZUVhVWEFYVU83VVg3Qy4u&wdLOR=c5814094D-026D-0544-AA8C-7C06129D1526) within ONE week of the due date of the assignment (i.e. the end of the timed assessment window). |
 |                                     |                                                                                                                                                                                                            |
+
 Mixed assessment 1 has two components:  
-  - Untimed guided analysis (this)  
-  - Timed assessment (50 minutes; 24-hour assessment window is 4:30 p.m. ET Tuesday, Apr 07 to 4:30 p.m. ET Wednesday, Apr 07)
+* Untimed guided analysis (this)
+* Timed assessment (50 minutes; 24-hour assessment window is 4:30 p.m. ET Tuesday, Apr 07 to 4:30 p.m. ET Wednesday, Apr 07)
  
  
 Spotify is a streaming music service. It provides an API for accessing its data and [`spotifyr`](http://github.com/charlie86/spotifyr)^[Charlie Thompson, Josiah Parry, Donal Phipps and Tom Wolff (2020).
@@ -71,24 +72,33 @@ Data on a range range of Korean pop ("K-pop") and Jazz artists and their tracks 
 1. Load your data by putting your ID in `get_my_songs()`.
 
 ```{r, libraries, message=FALSE}
+# You may need to reinstall the package 
+# (if you're working the JupyterHub across multiple sessions)
+# devtools::install_github("sta303-bolton/sta303mixed2")
 library(sta303mixed2)
 library(lme4)
 library(mgcv)
 ```
 
-```{r, loaddata}
-get_my_songs(100123456789)
+```{r, loaddata, message=FALSE}
+get_my_songs(1001234567)
 ```
 
 2. Add a new variable called `is_kpop` to your `training_data` set. This variable should take the value 1 if the track is from the 'k-pop' genre and 0 if it is from the jazz genre.
 
-```{r, add_var}
+```{r, add_var_kpop}
+
+```
+
+3. Add a new variable called `likely_live` to your `training_data` set. This variable should take the value 1 if the track has a `liveness` score of greater than 0.8.
+
+```{r, add_var_liveness}
 
 ```
 
 ## Part 2: Tables and calculations
 
-1. Using the `training_data`, create a table of `genre` by `mode_name`. I.e., have `genre` on the rows and `mode_name` on the columns.
+1. Using the `training_data`, create a table of `genre` by `mode_name`. I.e., have `genre` on the rows and `mode_name` on the columns. You can use `table` or `xtabs`.
 
 ```{r table}
 
@@ -112,6 +122,12 @@ get_my_songs(100123456789)
 
 ```
 
+5. Using the `training_data`, calculate the odds ratio for a song being Jazz, given that it is likely live given vs not.
+
+```{r livekvj}
+
+```
+
 ## Part 3: Models
 
 _Note: You do not have to do any further model tweaking other than the instructions provided._
@@ -125,7 +141,7 @@ _Note: You do not have to do any further model tweaking other than the instructi
 
 ```
 
-2. Using the `training_data`, fit an appropriate __mixed effects model__ (use the `lme4` package) to predict whether or not a song is K-pop based on `artist_popularity`, `danceability`, `valence` with a random effect for `artist_name`. (This make take some time to run)
+2. Using the `training_data`, fit an appropriate __mixed effects model__ (use the `lme4` package) to predict whether or not a song is K-pop based on `artist_popularity`, `danceability`, `valence` with an appropriate random effect for `artist_name`. (This make take some time to run)
 
 * Name your model: `model_2`.
 * __Important:__ Add the following argument to your model: `nAGQ=0`.
@@ -144,21 +160,25 @@ _Note: You do not have to do any further model tweaking other than the instructi
 * Use the default `k`.
 * Name your model: `model_3`.
 * Run `summary()` on your model.
+* Run `coef()` on your model.
 
 ```{r, gam, cache=TRUE}
 
 
 # summary(model_3)
+# coef(model_3)
 ```
 
 
 ## Part 4: Checking your predictions
 
-1. Uncomment the code below to add predictions for all your models to your `testing_data`.
+1. Uncomment the code below to add predictions for all your models to your `testing_data`. Red red text listing factor levels isn't a problem.
 
 ```{r, addpred}
 # add_my_predictions(testing_data, model_1, model_2, model_3)
 ```
+
+_Study question: What is the message telling you?_
 
 2. Find out how many correct predictions each of these models make when applied to the `testing_data`.
 

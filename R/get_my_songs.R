@@ -49,7 +49,8 @@ get_my_songs <- function(student_id){
        dplyr::sample_n(size = 50) %>%
        rename(artist_popularity = popularity, artist_followers = followers.total) %>%
        select(id, genre, artist_name, artist_popularity, artist_followers,
-              album_name, album_release_date, album_release_year, everything())
+              album_name, album_release_date, album_release_year, everything()) %>%
+       mutate(likely_live = if_else(liveness > 0.8, 1, 0))
 
      assign("training_data", training_data, .GlobalEnv)
      assign("testing_data", testing_data, .GlobalEnv)
