@@ -1,16 +1,19 @@
-Package: myStarship
+Package: sta303mixed2
 Type: Package
-Title: Creates Data About A Unique Starship 
+Title: Creates a Unique Dataset for Each Student
 Version: 0.1.0
 Author: Liza Bolton, liza.bolton@utoronto.ca
 Maintainer: Liza Bolton, <liza.bolton@utoronto.ca>
-Description: Creates a dataset about a unqiue fictional spaceship based on a student's 8-10 number student ID and their name. They will be the Chief Science Officer.
+Description: Creates a unique dataset based on a student's 8-10 number student ID and their name. 
 License: CC BY-NC
 Encoding: UTF-8
 LazyData: false
 Imports: tidyverse,
-          randomNames
+  mgcv,
+  gratia,
+  lme4
 Depends: 
-URL: https://github.com/elb0/myStarship
-BugReports: https://github.com/elb0/myStarship/issues
+    R (>= 2.10)
+URL: https://github.com/sta303-bolton/sta303mixed2
+BugReports: https://github.com/sta303-bolton/sta303mixed2/issues
 RoxygenNote: 7.1.0
